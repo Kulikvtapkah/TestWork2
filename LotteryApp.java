@@ -26,9 +26,9 @@ public class LotteryApp {
         View view = new ConsoleView();
         ConsoleMenu menu = new ConsoleMenu();
         
-        AbstractLot teddyBear = new ToyLot("Teddy bear", 100, 1);
-        AbstractLot legoStarWarsSet = new ToyLot("Star Wars (Lego Set)", 40, 1);
-        AbstractLot huggyWuggy = new ToyLot("Huggy Wuggy blue", 80, 1);
+        AbstractLot teddyBear = new ToyLot("Teddy bear", 100, 100);
+        AbstractLot legoStarWarsSet = new ToyLot("Star Wars (Lego Set)", 40, 10);
+        AbstractLot huggyWuggy = new ToyLot("Huggy Wuggy blue", 80, 7);
         AbstractLot erenYeagerActionToy = new ToyLot("Eren Yeager Action Figure", 3, 1);
 
         LotterySet toyLottery = new LotterySet(Arrays.asList(teddyBear, legoStarWarsSet, huggyWuggy, erenYeagerActionToy));

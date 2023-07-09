@@ -1,7 +1,7 @@
 package TestWork2.Presenter;
 
 import TestWork2.Models.Lottery;
-
+import TestWork2.Models.LotteryHistory;
 import TestWork2.View.View;
 
 public class LotteryRunner {
@@ -20,7 +20,12 @@ public class LotteryRunner {
                 view.userInfo("Начинаем розыгрыш игрушек! ");
                 if (view.getNumber(
                         "\nЧтобы участвовать, введите сумму вашей покупки в магазине, \nлибо любой другой знак, для отмены >> ") > 0) {
-                    view.userInfo(String.format("Поздравляем! Ваш выигрыш:\n %s", lottery.spin()));
+
+                    String prize = lottery.spin();
+                    view.userInfo(String.format("Поздравляем! Ваш выигрыш:\n %s", prize));
+
+                    LotteryHistory.saveHistory(String.format("Поздравляем! Ваш выигрыш:\n %s", prize));
+
                 } else {
                     view.userInfo("Пока!");
                     lotteryIsOn = false;
