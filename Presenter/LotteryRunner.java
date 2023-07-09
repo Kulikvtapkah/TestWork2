@@ -22,9 +22,9 @@ public class LotteryRunner {
                         "\nЧтобы участвовать, введите сумму вашей покупки в магазине, \nлибо любой другой знак, для отмены >> ") > 0) {
 
                     String prize = lottery.spin();
-                    view.userInfo(String.format("Поздравляем! Ваш выигрыш:\n %s", prize));
+                    view.userInfo(String.format("%s", prize));
 
-                    LotteryHistory.saveHistory(String.format("Поздравляем! Ваш выигрыш:\n %s", prize));
+                    LotteryHistory.saveHistory(String.format("%s", prize));
 
                 } else {
                     view.userInfo("Пока!");

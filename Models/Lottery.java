@@ -14,19 +14,29 @@ public class Lottery {
         System.out.println("выпало " + randomPoint);
         int i = 0;
         if (i < set.getLotterySet().size()) {
-            while (randomPoint <= set.getLot(i).getChanceToPick()) {
+            while (i < set.getLotterySet().size() && randomPoint <= set.getLot(i).getChanceToPick()) {
                 i++;
             }
-            System.out.println("i= " + i);
-            int randomLot = new Random().nextInt(i+1);
+            if (i > 0){
+
+            int randomLot = new Random().nextInt(i);
             AbstractLot prize = set.getLot(randomLot);
             prize.reduceAmount();
             if (prize.getLotAmount() == 0)
                 set.removeLot(randomLot);
-            return String.format("%s", prize);
-        } else {
+            return String.format("Поздравляем! Ваш выигрыш: \n%s", prize);
+
+            }
+            else {
+            return "Не получилось, не фортануло( В другой раз повезет!\n";
+        }
+           
+        } 
+         else {
             return "Не получилось, не фортануло( В другой раз повезет!";
         }
+           
+
 
     }
 

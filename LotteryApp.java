@@ -36,9 +36,6 @@ public class LotteryApp {
         ILotteryManager lotteryManager = new LotteryManager(toyLottery, lotteryView);
         LotteryRunner lottery = new LotteryRunner(new Lottery(toyLottery), lotteryView);
         
-        // Presenter presenter = new Presenter(view, Config.pathDb);
-        // presenter.LoadFromFile();
-
         view.userInfo("Добро пожаловать в \"Лотерею\"! \n");
         while (true)
             switch (view.getOption(menu.mainMenu)) {

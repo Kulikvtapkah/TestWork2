@@ -33,6 +33,7 @@ public class ConsoleView implements View {
         showOptions(optiontable);
         userInfo(">> ");
         String key = userAssistent.next();
+        userAssistent.nextLine();
         System.out.print("\033[H\033[J");
         return key;
     }
@@ -40,7 +41,9 @@ public class ConsoleView implements View {
  @Override
     public String getStringData(String message) {
         userInfo(message);
-        return userAssistent.nextLine();
+        String input = userAssistent.nextLine();
+        userAssistent.nextLine();
+        return input;
     }
 
 
@@ -53,6 +56,7 @@ public class ConsoleView implements View {
             userAssistent.nextLine();
         } catch (Exception e) {
            userInfo("");
+           userAssistent.nextLine();
         }
         return index;
     }
