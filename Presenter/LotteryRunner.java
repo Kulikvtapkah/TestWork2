@@ -7,6 +7,7 @@ import TestWork2.View.View;
 public class LotteryRunner {
     protected Lottery lottery;
     protected View view;
+    protected LotteryHistory history;
 
     public LotteryRunner(Lottery lottery, View view) {
         this.lottery = lottery;

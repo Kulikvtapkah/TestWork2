@@ -1,6 +1,7 @@
 package TestWork2;
 
 
+import java.io.IOException;
 import java.util.Arrays;
 
 import TestWork2.Models.AbstractLot;
@@ -16,12 +17,12 @@ import TestWork2.View.ConsoleView;
 import TestWork2.View.View;
 
 public class LotteryApp {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         runApp();
 
     }
 
-    public static void runApp() {
+    public static void runApp() throws IOException {
         System.out.print("\033[H\033[J");
         View view = new ConsoleView();
         ConsoleMenu menu = new ConsoleMenu();
